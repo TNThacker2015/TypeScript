@@ -5,8 +5,15 @@ interface BigInt {
      */
     toString(radix?: number): string;
 
-    /** Returns a string representation appropriate to the host environment's current locale. */
-    toLocaleString(): string;
+    /** 
+     * Returns a string representation appropriate to the host environment's current locale.
+     * @param locales A locale string or array of locale strings that contain one or more language
+     * or locale tags. If you include more than one locale string, list them in descending order of
+     * priority so that the first entry is the preferred locale. If you omit this parameter, the default
+     * locale of the JavaScript runtime is used.
+     * @param options An object that contains one or more properties that specify comparison options.
+     */
+    toLocaleString(locales?: string | string[] | undefined, options?: Intl.NumberFormatOptions | undefined): string;
 
     /** Returns the primitive value of the specified object. */
     valueOf(): bigint;
